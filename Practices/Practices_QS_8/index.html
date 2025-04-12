@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search in google</title>
+</head>
+<body>
+    <form action="https://www.google.com/search">
+        <label for="search"></label>
+        <input type="text" id="search" name="q" placeholder="search in google">
+        <button>search</button>
+
+    </form>
+    <hr>
+    <!-- checked box -->
+    <form action="/server">
+        <input type="checkbox" id="age" name="age" checked>
+        <label for="age">I am 18+</label>
+        <button>submit</button>
+        
+    </form>
+    <!-- Radio button -->
+     <form action="server">
+        <div>
+            Choose a fruit :
+            <input type="radio" name="fruit" id="apple" value="apple">
+            <label for="apple">Apple</label>
+            <input type="radio" name="fruit" id="mango" value="mango">
+            <label for="mango">Mango</label>
+            <input type="radio" name="fruit" id="orange" value="orange">
+            <label for="orange">Orange</label>
+         </div>
+         <!-- Dropdown -->
+          <div>
+            choose your profession :
+            <select name="profession" id="profession">
+                <option>choose one</option>
+                <option value="stu" selected>Student</option>
+                <option value="dev">Developer</option>
+            </select>
+          </div>
+          <!-- Range -->
+          <div>
+            <label for="vol">Select your volume :</label>
+            <input type="range" name="volume" id="vol" min="0" max="100" step="5">
+          </div>
+          <!-- textarea -->
+           <div>
+            <label for="feedback">Please give your valueable feedback :</label>
+            <textarea id="feedback" name="feedback" placeholder="Write your feedback here" rows="5" cols="100"></textarea>
+           </div>
+         <button>submit</button>
+
+     </form>
+     
+</body>
+</html>
