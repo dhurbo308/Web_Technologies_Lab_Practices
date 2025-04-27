@@ -1,154 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Registration Form</title>
-  <style>
-    .container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); 
-      grid-template-rows: repeat(2, 1fr);    
-      gap: 0px;                            
-      width: 100%;                         
-      height: 100vh;                        
-    }
-
-    .box {
-      background-color: rgb(241, 246, 249);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px; 
-      border: 2px solid #000;
-      box-sizing: border-box; 
-    }
-
-    .box1 { padding: 10px 20px 30px 40px; }
-    .box2 { padding: 20px 30px 40px 50px; align-items: flex-start; overflow-y: auto; 
-    background: url(https://gratisography.com/wp-content/uploads/2024/11/gratisography-augmented-reality-800x525.jpg);}
-    .box3 { padding: 30px 40px 50px 60px; }
-    .box4 { padding: 40px 50px 60px 70px; }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-    }
-
-    label {
-      font-weight: bold;
-    }
-
-    input, select, button {
-      padding: 8px;
-      font-size: 1em;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .checkbox-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .checkbox-container label {
-      font-weight: normal;
-    }
-
-    .error {
-      color: red;
-      font-size: 0.9em;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" href="favicon.jpg"/>
 </head>
 <body>
-  <div class="container">
-    <div class="box box1">Box 1</div>
+    
+        <img src="American_International_University-Bangladesh_Monogram.svg.png" alt="aiub logo" />
+    
+    
+    <h1>Registration Form</h1>
+    <div class="container">
+        <div class="box-1">Box-1</div>
+        <div class="box-2">Box-2</div>
+        <div class="box-3">
+            <form class="form-content">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your name" required><br>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="XX-XXXXX-X@student.aiub.edu"><br>
+        
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+        
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required><br>
+        
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location"><br>
+        
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zip" name="zip"><br>
+        
+                <label for="city">Preferred City:</label>
+                <select id="city" name="city">
+                    <option value="dhaka">Dhaka</option>
+                    <option value="chittagong">Chittagong</option>
+                    <option value="khulna">Khulna</option>
+                    <option value="rajshahi">Rajshahi</option>
+                </select><br>
+        
+                <label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    I agree to the terms and conditions
+                </label><br>
+        
+                <button type="submit">Register</button>
+            </form>
 
-    <div class="box box2">
-      <form id="registrationForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter your name" required />
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="xx-xxxxx-1@student.aiub.edu" required />
-        <div class="error" id="emailError"></div>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-        <div class="error" id="passwordError"></div>
-
-        <label for="confirm-password">Confirm Password:</label>
-        <input type="password" id="confirm-password" name="confirm-password" placeholder="Atleast 8 digit" required />
-        <div class="error" id="confirmError"></div>
-
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required />
-
-        <label for="zipcode">Zipcode:</label>
-        <input type="text" id="zipcode" name="zipcode" required />
-
-        <label for="cities">Preferred Cities:</label>
-        <select id="cities" name="cities">
-          <option value="newyork">New York</option>
-          <option value="losangeles">Los Angeles</option>
-          <option value="chicago">Chicago</option>
-          <option value="houston">Houston</option>
-          <option value="miami">Miami</option>
-        </select>
-
-        <div class="checkbox-container">
-          <input type="checkbox" id="terms" name="terms" />
-          <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
         </div>
-
-        <button type="submit">Submit</button>
-      </form>
+        <div class="box-4">Box-4</div>
     </div>
 
-    <div class="box box3">Box 3</div>
-    <div class="box box4">Box 4</div>
-  </div>
-
-  <script>
-    document.getElementById("registrationForm").addEventListener("submit", function(event) {
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirm-password").value;
-
-      const emailError = document.getElementById("emailError");
-      const passwordError = document.getElementById("passwordError");
-      const confirmError = document.getElementById("confirmError");
-
-      // Clear errors
-      emailError.textContent = "";
-      passwordError.textContent = "";
-      confirmError.textContent = "";
-
-      // Email validation
-      const emailRegex = /^\d{2}-\d{5}-\d@student\.aiub\.edu$/;
-      if (!emailRegex.test(email)) {
-        emailError.textContent = "Email must follow the format XX-XXXXX-X@student.aiub.edu";
-        event.preventDefault();
-      }
-
-      // Password validation
-      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-      if (!passwordRegex.test(password)) {
-        passwordError.textContent = "Password must be at least 8 characters and include uppercase, lowercase, number, and special character.";
-        event.preventDefault();
-      }
-
-      // Confirm password validation
-      if (password !== confirmPassword) {
-        confirmError.textContent = "Passwords do not match.";
-        event.preventDefault();
-      }
-    });
-  </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector(".form-content");
+    
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent form from submitting immediately
+    
+                const username = document.getElementById("username").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("password").value;
+                const confirmPassword = document.getElementById("confirm-password").value;
+                const termsChecked = document.getElementById("terms").checked;
+    
+                // Basic validation
+                if (username === "") {
+                    alert("Username is required.");
+                    return;
+                }
+    
+                if (email === "") {
+                    alert("Email is required.");
+                    return;
+                }
+    
+                // Email format check (basic)
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(edu|com|net|org)$/;
+                if (!emailPattern.test(email)) {
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+    
+                if (password.length < 6) {
+                    alert("Password must be at least 6 characters long.");
+                    return;
+                }
+    
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match.");
+                    return;
+                }
+    
+                if (!termsChecked) {
+                    alert("You must agree to the terms and conditions.");
+                    return;
+                }
+    
+                // If all validation passes
+                alert("Registration successful!");
+                form.submit(); // Now allow form submission
+            });
+        });
+    </script>
+    
 </body>
 </html>
